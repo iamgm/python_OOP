@@ -1,4 +1,3 @@
-
 lst_in = list(map(str.strip, sys.stdin.readlines()))
 
 # lst_in = ["abc","cdf", "efg", "jkl", "mno"] # test data
