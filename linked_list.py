@@ -1,7 +1,7 @@
 
-# lst_in = list(map(str.strip, sys.stdin.readlines()))
+lst_in = list(map(str.strip, sys.stdin.readlines()))
 
-lst_in = ["abc","cdf", "efg", "jkl", "mno"] # test data
+# lst_in = ["abc","cdf", "efg", "jkl", "mno"] # test data
 
 
 class ListObject:
@@ -18,8 +18,9 @@ head_obj = ListObject(next(itt))
 
 def fill_linked_list(obj, it):
     try:
-        tail = obj.link(ListObject(next(it)))
-        return fill_linked_list(obj.next_obj, it)    
+        obj.link(ListObject(next(it)))
+        # print(obj.data) # test
+        return fill_linked_list(obj.next_obj, it)
     except StopIteration as e:
         pass
     
