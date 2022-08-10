@@ -3,8 +3,7 @@ class ImageFileAcceptor:
         self.extensions = extensions
     
     def __call__(self, *args, **kwargs):
-        ext = args[0].split('.')[-1]
-        if ext in self.extensions:
+        if args[0].split('.')[-1] in self.extensions:
             return args[0]
 
 # Подвиг 3. Для последовательной обработки файлов из некоторого списка, например:
