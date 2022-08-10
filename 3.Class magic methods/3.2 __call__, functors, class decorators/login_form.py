@@ -18,9 +18,7 @@ class LoginForm:
         for v in self.validators:
             if not v(self.login) or not v(self.password):
                 return False
-
         return True
-
 
 class LengthValidator:
     def __init__(self, min_length, max_length):
