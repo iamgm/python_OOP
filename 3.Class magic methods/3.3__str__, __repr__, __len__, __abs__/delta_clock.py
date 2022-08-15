@@ -21,19 +21,6 @@ class DeltaClock:
     def __str__(self):
         return time.strftime("%H: %M: %S", time.gmtime(len(self)))
 
-# print(time.ctime(10))
-# print(time.strftime('%H: %M: %S', time.gmtime(70)))
-# # print(time.gmtime(10))
-# struct = time.localtime()
-# print(struct)
-
-
-dt = DeltaClock(Clock(2, 45, 0), Clock(1, 15, 0))
-print(dt) # 01: 30: 00
-len_dt = len(dt) # 5400
-print(len_dt)
-# time.strftime('%H: %M: %S', time.gmtime(разница времен clock1 - clock2))
-
 # Подвиг 8. Объявите класс DeltaClock для вычисления разницы времен. Объекты этого класса должны создаваться командой:
 
 # dt = DeltaClock(clock1, clock2)
