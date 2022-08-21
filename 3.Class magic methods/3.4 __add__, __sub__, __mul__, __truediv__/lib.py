@@ -3,7 +3,6 @@ class Book:
         self.title = title
         self.author = author
         self.year = year
-        
 
 class Lib:
     def __init__(self):
