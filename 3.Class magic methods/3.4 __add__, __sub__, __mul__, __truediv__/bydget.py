@@ -4,10 +4,10 @@ class Item:
         self.money = money
     
     def __add__(self, other):
-        return self.money + other.money
+        return self.money + other
 
     def __radd__(self, other):
-        return self.money + Item("temp", other).money
+        return self + other
 
 class Budget:
     def __init__(self):
@@ -61,4 +61,5 @@ class Budget:
 # s = 0
 # for x in my_budget.get_items():
 #     s = s + x
+
 # P.S. В программе требуется только объявить класс. На экран ничего выводить не нужно.
