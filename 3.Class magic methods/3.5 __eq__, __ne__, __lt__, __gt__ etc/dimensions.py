@@ -31,9 +31,6 @@ class Dimensions:
     def __gt__(self, other):
         return self.get_vol() > other.get_vol()
 
-    def __lt__(self, other):
-        return self.get_vol() < other.get_vol()
-
 class ShopItem:
     def __init__(self, name, price, dim):
         self.name = name
