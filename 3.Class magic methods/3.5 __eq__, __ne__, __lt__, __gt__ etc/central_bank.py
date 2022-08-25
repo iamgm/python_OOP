@@ -29,11 +29,12 @@ class Money:
     def __ge__(self, other):
         self.is_rate_available(other)
         s, o = self.vol_to_rub(self, other)
-        return math.is_close(s, o) or s > o
+        return math.isclose(s, o) or s > o
 
     def __eq__(self, other):
         self.is_rate_available(other)
-        return abs(self.vol_to_rub(self) - self.vol_to_rub(other)) <= 0.1
+        s, o = self.vol_to_rub(self, other)
+        return abs(s - o) <= 0.1
 
     def is_rate_available(self, other):
         if not(self.cb and other.cb):
