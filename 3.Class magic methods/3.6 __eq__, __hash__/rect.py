@@ -8,12 +8,6 @@ class Rect:
     def __hash__(self):
         return hash(f"{self.width}  {self.height}")
 
-
-r1 = Rect(10, 5, 100, 50)
-r2 = Rect(-10, 4, 100, 50)
-
-h1, h2 = hash(r1), hash(r2)   
-print(h1 == h2)        
 # Подвиг 4. Объявите в программе класс с именем Rect (прямоугольник), объекты которого создаются командой:
 
 # rect = Rect(x, y, width, height)
