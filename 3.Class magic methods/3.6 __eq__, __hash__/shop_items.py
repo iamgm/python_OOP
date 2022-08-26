@@ -15,7 +15,7 @@ lst_in = list(map(str.strip, sys.stdin.readlines()))
 shop_items = {}
 for item in lst_in:
     name, weight, price = item.rsplit(maxsplit=2)
-    obj = ShopItem(name[:-1], weight, price)
+    obj = ShopItem(name[:-1], float(weight), float(price))
     shop_items.setdefault(obj, [obj, 0])[1]+=1
 
 
