@@ -23,6 +23,43 @@ class Body:
         return (a.ro * a.volume,
                 b.ro * b.volume if isinstance(b, Body) else b)
 
+# weird things with floats comparison
+# import math
+# print(0.1 + 0.2 == 0.3) # False
+# print(0.8 - 0.1 > 0.7)  # True
+
+
+# #right way of doing things is using math.isclose
+# print(math.isclose(0.1 + 0.2, 0.3, abs_tol = 1e-5))
+# n1 = 0.8 - 0.1
+# n2 = 0.7
+# print(not math.isclose(n1, n2, abs_tol = 1e-5) and n1 > n2)
+
+
+# a, b, c = 0.1, 0.2, 0.3
+# # Don't do this:
+# a + b <= c  # False
+# # Do this instead:
+# math.isclose(a + b, c) or (a + b < c) # True
+
+
+# # Relative check fails!
+# # ---------------vvvv  Relative tolerance
+# # ----------------------vvvvv  max(0, 1e-10)
+# abs(0 - 1e-10) < 1e-9 * 1e-10 #False
+
+# # Absolute check works!
+# # ---------------vvvv  Absolute tolerance
+# abs(0 - 1e-10) < 1e-9 #True
+
+# # that's why we should always set abs_tol when numbers 
+# # are really close to or equal to zero
+
+# # isclose fallback for python ver. < 3.5
+# def isclose(a, b, rel_tol=1e-09, abs_tol=0.0):
+#     return abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)
+
+
 
 # al = Body("Алюминий", 2700, 0.1)
 # vp = Body("Винипласт", 1350, 0.2)
