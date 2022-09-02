@@ -33,26 +33,13 @@ class Bag:
 
     def validate_weight(self, bag_weight, thing):
         b, t, mw  = bag_weight, thing.weight, self.max_weight 
-        if not (b + t <= mw):
-        # if not (isclose(b + t, mw) or (b + t < mw)):
+        if not (isclose(b + t, mw) or (b + t < mw)):
             raise ValueError('превышен суммарный вес предметов')
 
 class Thing:
     def __init__(self, name, weight):
         self.name = name
         self.weight = weight
-
-bag = Bag(0.3)
-bag.add_thing(Thing('книга', 0.2))
-bag.add_thing(Thing('носки', 0.1))
-# bag.add_thing(Thing('рубашка', 500))
-# bag.add_thing(Thing('ножницы', 300)) # генерируется исключение ValueError
-# print(bag[2].name) # рубашка
-# bag[1] = Thing('платок', 100)
-print(bag[1].name) # платок
-# del bag[0]
-print(bag[0].name) # платок
-# t = bag[4] # генерируется исключение IndexError
 
 # Подвиг 9 (релакс). Объявите в программе класс Bag (сумка), объекты которого создаются командой:
 
