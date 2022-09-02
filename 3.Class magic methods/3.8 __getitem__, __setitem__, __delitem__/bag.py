@@ -7,7 +7,7 @@ class Bag:
         self.weight = 0
     
     def add_thing(self, thing):
-        self.validate_weight(self.weight, thing)
+        self.validate_weight(self.weight, thing.weight)
         self.things.append(thing)
         self.weight += thing.weight
 
@@ -18,7 +18,7 @@ class Bag:
     def __setitem__(self, idx, thing):
         self.validate_idx(idx)
         bag_weight = self.weight - self.things[idx].weight
-        self.validate_weight(bag_weight, thing)
+        self.validate_weight(bag_weight, thing.weight)
         self.weight = bag_weight + thing.weight 
         self.things[idx] = thing
 
@@ -31,9 +31,8 @@ class Bag:
         if not (isinstance(idx, int) and (0 <= idx < len(self.things))):
             raise IndexError('неверный индекс')
 
-    def validate_weight(self, bag_weight, thing):
-        b, t, mw  = bag_weight, thing.weight, self.max_weight 
-        if not (isclose(b + t, mw) or (b + t < mw)):
+    def validate_weight(self, b, t):
+        if not (isclose(b + t, self.max_weight) or (b + t < self.max_weight)):
             raise ValueError('превышен суммарный вес предметов')
 
 class Thing:
