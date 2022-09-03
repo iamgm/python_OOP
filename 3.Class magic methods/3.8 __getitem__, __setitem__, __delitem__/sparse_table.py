@@ -4,11 +4,11 @@ class SparseTable:
 
     @property
     def rows(self):
-        return max(self.table, key=lambda x: x[0])[0] +1 if self.table else 0
+        return max(self.table, key = lambda x: x[0])[0] +1 if self.table else 0
 
     @property
     def cols(self):
-        return max(self.table, key=lambda x: x[1])[1] +1 if self.table else 0
+        return max(self.table, key = lambda x: x[1])[1] +1 if self.table else 0
 
     def add_data(self, row, col, data):
         self.table[(row, col)] = data
