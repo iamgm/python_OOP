@@ -18,12 +18,10 @@ class Game(Singleton):
         if not hasattr(self, "name"):
             self.name = name
 
-        
-
-g1 = Game("tictactoe")
-g2 = Game("sapper")
-print(g1.name)
-print(g2.name)
+# g1 = Game("tictactoe")
+# g2 = Game("sapper")
+# print(g1.name) # tictactoe
+# print(g2.name) # tictactoe
 # Подвиг 7. С помощью наследования можно как бы "наполнять" дочерние классы нужными качествами (свойствами). Как пример, объявите в программе класс с именем:
 # Singleton
 # который бы позволял создавать только один экземпляр (все последующие экземпляры должны ссылаться на первый). Как это делать, вы должны уже знать из этого курса.
