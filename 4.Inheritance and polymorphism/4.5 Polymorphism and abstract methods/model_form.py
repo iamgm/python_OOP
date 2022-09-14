@@ -9,21 +9,16 @@ class Model(ABC):
         return "Базовый класс Model"
 
 class ModelForm(Model):
-    __id = -1
+    __id = 0
 
     def __init__(self, login, password):
         self._login = login
         self._password = password
-        self._id = self.generate_id()
-        
-    @classmethod
-    def generate_id(cls):
-        cls.__id += 1
-        return cls.__id
+        self._id = self.__id
+        type(self).__id += 1
 
     def get_pk(self):
         return self._id
-
 
 # Подвиг 6 (про модуль abc). В языке Python есть еще один распространенный способ объявления абстрактных методов класса через декоратор abstractmethod модуля abc:
 # from abc import ABC, abstractmethod
